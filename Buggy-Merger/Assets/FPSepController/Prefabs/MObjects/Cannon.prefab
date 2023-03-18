@@ -342,6 +342,10 @@ GameObject:
   m_Component:
   - component: {fileID: 8056902403216280181}
   - component: {fileID: 7249253516149438063}
+  - component: {fileID: 3726860232501828866}
+  - component: {fileID: 7746054776096911574}
+  - component: {fileID: 472758309094415451}
+  - component: {fileID: 1624373664788974744}
   m_Layer: 0
   m_Name: Cannon
   m_TagString: Untagged
@@ -379,5 +383,66 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.12750581, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.115015075, y: 0.13598132, z: 0.31954587}
+  m_Center: {x: 0.001967527, y: 0.2561696, z: 0.09086767}
+--- !u!136 &3726860232501828866
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990749657403400004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.075
+  m_Height: 0.3
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.13, z: 0}
+--- !u!136 &7746054776096911574
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990749657403400004}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.04
+  m_Height: 0.21
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.25, z: 0.35}
+--- !u!114 &472758309094415451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990749657403400004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99fff678bd0d4ad4d813ddfee3d1d572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outline: {fileID: 0}
+  activation: {fileID: 0}
+  properties: []
+--- !u!114 &1624373664788974744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6990749657403400004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca10bbc9517d5f54a9631a7b1234d438, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 2
+  defaultAmmoPrefab: {fileID: 0}
+  ammo: {fileID: 3999804777051586816, guid: 8304cfd96f7044e4e92961f387a1dfdb, type: 3}
+  shootSpeed: 0
+  throwAngle: {x: 0, y: 0, z: 0}
+  throwForce: 0

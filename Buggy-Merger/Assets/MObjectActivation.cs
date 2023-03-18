@@ -15,7 +15,6 @@ public class MObjectActivation : MonoBehaviour
     public enum OnActivationType {Place = 0, Throw = 1, Fire = 2}
     public OnActivationType type = OnActivationType.Place;
 
-    public Rigidbody defaultAmmoPrefab;
     public Rigidbody ammo;
     public float shootSpeed;
     
@@ -53,10 +52,9 @@ public class MObjectActivation : MonoBehaviour
 
     private void activateFire()
     {
-        Rigidbody toShootPrefab = ammo != null ? ammo : defaultAmmoPrefab;
-        if (toShootPrefab == null) return;
+        if (ammo == null) return;
 
-        Rigidbody toShoot = Instantiate(toShootPrefab);
+        Rigidbody toShoot = Instantiate(ammo);
         toShoot.transform.position = mObject.transform.position;
 
     }
