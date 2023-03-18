@@ -1,6 +1,6 @@
 # This file uses centimeters as units for non-parametric coordinates.
 
-mtllib bouncyball.mtl
+mtllib bouncyball2.mtl
 g default
 v 0.012085 -0.020896 -0.006506
 v -0.006931 -0.022934 -0.007141
