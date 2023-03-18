@@ -109,6 +109,11 @@ public class MObjectActivation : MonoBehaviour
             point = ray.origin + (ray.direction * pRange) + (Vector3.down * pRange);
         }
 
+        Vector3 rotation = pMObject.transform.eulerAngles;
+        rotation.x = 0f;
+        rotation.z = 0f;
+        pMObject.transform.rotation = Quaternion.Euler(rotation);
+
         pMObject.transform.position = point;
         Drop(pMObject);
     }

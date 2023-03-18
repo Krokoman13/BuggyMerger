@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectSelector : PlayerComponent
 {
@@ -17,11 +18,8 @@ public class ObjectSelector : PlayerComponent
     [SerializeField] Transform handLeft;
     [SerializeField] Transform handRight;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] UnityEvent onSeeObject = null;
+    [SerializeField] UnityEvent onLostObject = null;
 
     // Update is called once per frame
     void Update()
@@ -30,7 +28,6 @@ public class ObjectSelector : PlayerComponent
         {
             if (current != null)
             {
-
                 equipLeftHand(current);
             }
             else if (inLeft != null)
@@ -93,16 +90,18 @@ public class ObjectSelector : PlayerComponent
         if (pCurrent == null) return;
         current = pCurrent;
 
-        Outline outline = pCurrent.outline;
-        outline.enabled = true;
+        onSeeObject?.Invoke();
+        //Outline outline = pCurrent.outline;
+        //outline.enabled = true;
     }
 
     private void deselct()
     {
         if (current == null) return;
 
-        Outline outline = current.outline;
-        outline.enabled = false;
+        onLostObject?.Invoke();
+        //Outline outline = current.outline;
+        //outline.enabled = false;
 
         current = null;
     }
