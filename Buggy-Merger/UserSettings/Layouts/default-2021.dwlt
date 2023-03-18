@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Game
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 503, y: 321}
   m_MaxSize: {x: 16192, y: 12117}
   vertical: 0
-  controlID: 21
+  controlID: 110
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 321}
   m_MaxSize: {x: 8096, y: 12117}
   vertical: 1
-  controlID: 56
+  controlID: 111
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 57
+  controlID: 112
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -317,22 +317,22 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/FPSepController/Prefabs/MObjects
+    - Assets/Personal Folders/Jim
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/FPSepController/Prefabs/MObjects
+  - Assets/Personal Folders/Jim
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\bramt\Documents\Git\BuggyMerger\Buggy-Merger
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 92770000
-    m_LastClickedID: 30610
-    m_ExpandedIDs: 00000000ee5a0000f25a00008677000000ca9a3bffffff7f
+    m_SelectedIDs: ec5c0000
+    m_LastClickedID: 23788
+    m_ExpandedIDs: 00000000065b00001a5b0000465b0000c85c000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -360,7 +360,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 
+    m_ExpandedIDs: 00000000065b0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -488,20 +488,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: f05c0000
       m_LastClickedID: 0
-      m_ExpandedIDs: 889dffff909dffff949dffffda9dffffe09dfffff6a1ffff6ca5ffff20a6ffffe0a6ffffdaa9ffff9cadffffeaadffff6cfaffffc2faffff18fbffff865900008a590000
+      m_ExpandedIDs: b8e0ffff28e3ffff1afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Cannon
-        m_OriginalName: Cannon
+        m_Name: Cylinder
+        m_OriginalName: Cylinder
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -33178
+        m_UserData: -4458
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -774,7 +774,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -0.11176801, y: -0.017347693, z: 0.39959198}
     speed: 2
-    m_Value: {x: -0.21143866, y: -11.131604, z: -14.72437}
+    m_Value: {x: -0.11176801, y: -0.017347693, z: 0.39959198}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -823,18 +823,18 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.19749533, y: 0.76043, z: -0.26967755, w: -0.5568489}
     speed: 2
-    m_Value: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+    m_Value: {x: -0.19748895, y: 0.7604054, z: -0.26966885, w: -0.5568309}
   m_Size:
     m_Target: 1.1025693
     speed: 2
-    m_Value: 10.45
+    m_Value: 1.1025693
   m_Ortho:
     m_Target: 0
     speed: 2
     m_Value: 0
   m_CameraSettings:
-    m_Speed: 1
-    m_SpeedNormalized: 0.5
+    m_Speed: 0.76062
+    m_SpeedNormalized: 0.38
     m_SpeedMin: 0.001
     m_SpeedMax: 2
     m_EasingEnabled: 1
