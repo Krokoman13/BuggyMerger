@@ -130,4 +130,17 @@ public class MObjectActivation : MonoBehaviour
 
         Gizmos.DrawLine(transform.position, transform.position + (transform.forward + throwAngle).normalized * throwForce);
     }
+
+    internal static MObjectActivation AddComponentClone(GameObject target, MObjectActivation toClone)
+    {
+        MObjectActivation cloned = target.AddComponent<MObjectActivation>();
+        cloned.type = toClone.type;
+        cloned.ammo = toClone.ammo;
+
+        cloned.shootSpeed = toClone.shootSpeed;
+        cloned.throwAngle = toClone.throwAngle;
+        cloned.throwForce = toClone.throwForce;
+
+        return cloned;
+    }
 }
