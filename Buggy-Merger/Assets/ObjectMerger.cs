@@ -12,6 +12,13 @@ public class ObjectMerger : MonoBehaviour
         MObject outP = Instantiate(two);
         two.enabled = true;
 
+        if (one.modelPrio > outP.modelPrio)
+        {
+            Destroy(outP.model.gameObject);
+            outP.model = Instantiate(one.model, outP.transform);
+            outP.model.localPosition = one.transform.localPosition;
+        }
+
         if (two.activation.type == OnActivationType.Fire)
         {
             outP.activation.Load(one);
@@ -19,7 +26,8 @@ public class ObjectMerger : MonoBehaviour
         else if (one.activation.type != OnActivationType.Fire && two.activation.type < one.activation.type)
         {
             Destroy(outP.activation);
-            outP.activation = ComponentUtils.CopyComponent(one.activation, outP.gameObject);
+            //outP.activation = ComponentUtils.CopyComponent(one.activation, outP.gameObject);
+            outP.activation = MObjectActivation.AddComponentClone(outP.gameObject, one.activation);
             outP.activation.SetObject(outP);
         }
 

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
-[RequireComponent(typeof(MObjectActivation))]
 public class MObject : MonoBehaviour
 {
     public Outline outline;
@@ -12,6 +11,9 @@ public class MObject : MonoBehaviour
 
     public List<MObjectPropperty> properties;
     private Type getProppertyType;
+
+    [NonSerialized] public Transform model;
+    public int modelPrio;
 
     private void Awake()
     {
@@ -26,6 +28,8 @@ public class MObject : MonoBehaviour
 
         List< MObjectPropperty > mObjectPropperties = new List<MObjectPropperty>(GetComponents<MObjectPropperty>());
         mObjectPropperties.Sort(delegate (MObjectPropperty c1, MObjectPropperty c2) { return c1.priority.CompareTo(c2.priority); });
+
+        model = transform.GetChild(0);
 
         foreach (MObjectPropperty propperty in mObjectPropperties)
         {
