@@ -38,6 +38,9 @@ public class MObjectActivation : MonoBehaviour
     {
         switch (type)
         {
+            case OnActivationType.Drop:
+                Drop(mObject);
+                break;
             case OnActivationType.Place:
                 activatePlace(mObject, groundDetectMask, 3f);
                 break;
@@ -56,7 +59,8 @@ public class MObjectActivation : MonoBehaviour
 
         Rigidbody toShoot = Instantiate(ammo);
         toShoot.gameObject.SetActive(true);
-        toShoot.transform.position = mObject.transform.position;
+        toShoot.transform.position = mObject.transform.position + (mObject.transform.forward / 2f);
+        toShoot.transform.rotation = mObject.transform.rotation;
         toShoot.velocity = (toShoot.transform.forward * force);
     }
 
@@ -125,5 +129,18 @@ public class MObjectActivation : MonoBehaviour
         Gizmos.color = Color.red;
 
         Gizmos.DrawLine(transform.position, transform.position + (transform.forward + throwAngle).normalized * throwForce);
+    }
+
+    internal static MObjectActivation AddComponentClone(GameObject target, MObjectActivation toClone)
+    {
+        MObjectActivation cloned = target.AddComponent<MObjectActivation>();
+        cloned.type = toClone.type;
+        cloned.ammo = toClone.ammo;
+
+        cloned.shootSpeed = toClone.shootSpeed;
+        cloned.throwAngle = toClone.throwAngle;
+        cloned.throwForce = toClone.throwForce;
+
+        return cloned;
     }
 }
