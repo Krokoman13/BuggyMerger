@@ -664,6 +664,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4001536708686449891, guid: 5ca18ed5d09d8074bb4268c57d831bed, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4001536708686449916, guid: 5ca18ed5d09d8074bb4268c57d831bed, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1.4
@@ -695,6 +699,19 @@ MonoBehaviour:
   - MObject
   handLeft: {fileID: 846477515}
   handRight: {fileID: 1730974258}
+--- !u!114 &518075856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518075842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 518075842}
 --- !u!1001 &661024455
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -896,11 +913,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: -66868009
-      Data2: 1234227635
-      Data3: -135806558
-      Data4: -1602579458
-    Path: event:/Ambience_AC_FUCKINGWORK
+      Data1: 1779554543
+      Data2: 1083075160
+      Data3: 1668769720
+      Data4: 1459475811
+    Path: event:/Ambience_sfx/ambience_ac_local_sfx
   Event: 
   PlayEvent: 1
   StopEvent: 2
@@ -909,43 +926,8 @@ MonoBehaviour:
   Preload: 0
   Params: []
   OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!1 &1495423741 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 20353492415555762, guid: 13787a20cc2247746a58ff583074b362, type: 3}
-  m_PrefabInstance: {fileID: 2079308947}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1495423748
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1495423741}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -66868009
-      Data2: 1234227635
-      Data3: -135806558
-      Data4: -1602579458
-    Path: event:/Ambience_AC_FUCKINGWORK
-  Event: 
-  PlayEvent: 1
-  StopEvent: 2
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideMinDistance: 2.2
+  OverrideMaxDistance: 30
 --- !u!1 &1503444800
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,8 +937,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1503444801}
+  - component: {fileID: 1503444803}
+  - component: {fileID: 1503444802}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Music_lvl01_box
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -983,6 +967,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1503444802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503444800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: -474133214
+      Data2: 1144560380
+      Data3: -170250578
+      Data4: -550093205
+    Path: event:/Music_lvl01
+  Event: 
+  PlayEvent: 3
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!65 &1503444803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503444800}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 10, y: 10, z: 10}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1730974257
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1277,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137729415}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 
@@ -1258,13 +1285,13 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 376514652
-      Data2: 1329170425
-      Data3: 306014372
-      Data4: 1571921829
-    Path: event:/Music
+      Data1: -474133214
+      Data2: 1144560380
+      Data3: -170250578
+      Data4: -550093205
+    Path: event:/Music_lvl01
   Event: 
-  PlayEvent: 0
+  PlayEvent: 1
   StopEvent: 0
   AllowFadeout: 1
   TriggerOnce: 0
@@ -1273,19 +1300,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &2137729417
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2137729415}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attenuationObject: {fileID: 518075842}
 --- !u!114 &2137729420
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,7 +1307,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2137729415}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
   m_Name: 

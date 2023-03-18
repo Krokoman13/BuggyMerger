@@ -42,11 +42,65 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638147625549104509
+  lastModified: 638147832165141097
   FileSizes:
   - Name: Desktop
-    Value: 7370176
+    Value: 8456320
   Exists: 1
+--- !u!114 &-5173479932902563953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music_mainmenu
+  m_EditorClassIdentifier: 
+  Path: event:/Music_mainmenu
+  Guid:
+    Data1: 376514652
+    Data2: 1329170425
+    Data3: 306014372
+    Data4: 1571921829
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 196000
+--- !u!114 &-4943944539884311346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/dynamite
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/dynamite
+  Guid:
+    Data1: 2067298116
+    Data2: 1224831381
+    Data3: -1130872958
+    Data4: 902730007
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2344
 --- !u!114 &-4602894520104035701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +128,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 172000
---- !u!114 &-2821066312686626893
+--- !u!114 &-4483829622261473479
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -84,23 +138,77 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience_AC_FUCKINGWORK
+  m_Name: event:/Music_lvl01
   m_EditorClassIdentifier: 
-  Path: event:/Ambience_AC_FUCKINGWORK
+  Path: event:/Music_lvl01
   Guid:
-    Data1: -66868009
-    Data2: 1234227635
-    Data3: -135806558
-    Data4: -1602579458
+    Data1: -474133214
+    Data2: 1144560380
+    Data3: -170250578
+    Data4: -550093205
   Banks:
   - {fileID: -6101041359582367892}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 0
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 5625
+  Length: 65187
+--- !u!114 &-3495490621096678879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/gravity_crystal
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/gravity_crystal
+  Guid:
+    Data1: 949518014
+    Data2: 1259682425
+    Data3: 1485808274
+    Data4: 329290851
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1508
+--- !u!114 &-2749203506266906221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/wooden box
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/wooden box
+  Guid:
+    Data1: -680229847
+    Data2: 1190072777
+    Data3: -62192251
+    Data4: -243285896
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1046
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,19 +225,28 @@ MonoBehaviour:
   - {fileID: 7164198517794379976}
   - {fileID: -6101041359582367892}
   EditorEvents:
-  - {fileID: 1061468452643231885}
   - {fileID: -4602894520104035701}
   - {fileID: -8571025968032026122}
   - {fileID: 2490516294519227246}
-  - {fileID: -2821066312686626893}
+  - {fileID: -4483829622261473479}
+  - {fileID: 2024496409649070642}
+  - {fileID: 8207123516218827361}
+  - {fileID: -2749203506266906221}
+  - {fileID: -4943944539884311346}
+  - {fileID: 1953861760314812309}
+  - {fileID: 7187161892365890258}
+  - {fileID: 4341253768396474604}
+  - {fileID: -3495490621096678879}
+  - {fileID: 7267873120898255662}
+  - {fileID: -5173479932902563953}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6101041359582367892}
   StringsBanks:
   - {fileID: 7164198517794379976}
-  cacheTime: 638147625549118206
+  cacheTime: 638147832165157295
   cacheVersion: 131601
---- !u!114 &1061468452643231885
+--- !u!114 &1953861760314812309
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -139,23 +256,51 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music
+  m_Name: event:/Item_sfx/anvil
   m_EditorClassIdentifier: 
-  Path: event:/Music
+  Path: event:/Item_sfx/anvil
   Guid:
-    Data1: 376514652
-    Data2: 1329170425
-    Data3: 306014372
-    Data4: 1571921829
+    Data1: 269889375
+    Data2: 1300433235
+    Data3: -1334649720
+    Data4: -1331161445
   Banks:
   - {fileID: -6101041359582367892}
-  IsStream: 1
+  IsStream: 0
   Is3D: 0
-  IsOneShot: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 196000
+  Length: 2687
+--- !u!114 &2024496409649070642
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/footsteps
+  m_EditorClassIdentifier: 
+  Path: event:/footsteps
+  Guid:
+    Data1: 1177043187
+    Data2: 1178028311
+    Data3: 885296527
+    Data4: -537825226
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 7818275870258439864}
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20000
 --- !u!114 &2490516294519227246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,6 +328,33 @@ MonoBehaviour:
   MinDistance: 2.2
   MaxDistance: 30
   Length: 46000
+--- !u!114 &4341253768396474604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/chair
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/chair
+  Guid:
+    Data1: 320964185
+    Data2: 1281475472
+    Data3: -1617573500
+    Data4: -610275287
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 335
 --- !u!114 &7164198517794379976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,8 +370,113 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638147625549118206
+  lastModified: 638147832165157295
   FileSizes:
   - Name: Desktop
-    Value: 986
+    Value: 1432
   Exists: 1
+--- !u!114 &7187161892365890258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/item_combining
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/item_combining
+  Guid:
+    Data1: 1228859187
+    Data2: 1208411473
+    Data3: -1487423851
+    Data4: 2048448599
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1351
+--- !u!114 &7267873120898255662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/bouncy_ball
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/bouncy_ball
+  Guid:
+    Data1: 504272434
+    Data2: 1226156228
+    Data3: -646092367
+    Data4: 1283753944
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2250
+--- !u!114 &7818275870258439864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/footsteps/walking speed
+  m_EditorClassIdentifier: 
+  Name: walking speed
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1384229937
+    data2: 1587258042
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
+--- !u!114 &8207123516218827361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/gun
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/gun
+  Guid:
+    Data1: 996180954
+    Data2: 1226599104
+    Data3: 1509995710
+    Data4: 87585472
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1041
