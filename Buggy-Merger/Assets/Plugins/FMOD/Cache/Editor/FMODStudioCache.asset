@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638147832165141097
+  lastModified: 638147978901744787
   FileSizes:
   - Name: Desktop
-    Value: 8456320
+    Value: 8798496
   Exists: 1
 --- !u!114 &-5173479932902563953
 MonoBehaviour:
@@ -101,6 +101,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 2344
+--- !u!114 &-4618306148475186301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/camera_buzzing
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/camera_buzzing
+  Guid:
+    Data1: -54011711
+    Data2: 1075183343
+    Data3: -158285658
+    Data4: 1062743576
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 24000
 --- !u!114 &-4602894520104035701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +182,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 65187
+--- !u!114 &-4224534559343514053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/glass_breaking
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/glass_breaking
+  Guid:
+    Data1: 2052075330
+    Data2: 1118331457
+    Data3: -1999718528
+    Data4: 636539029
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1811
 --- !u!114 &-3495490621096678879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,13 +293,45 @@ MonoBehaviour:
   - {fileID: -3495490621096678879}
   - {fileID: 7267873120898255662}
   - {fileID: -5173479932902563953}
+  - {fileID: -4224534559343514053}
+  - {fileID: -4618306148475186301}
+  - {fileID: 3397036439785025844}
+  - {fileID: 3126649581824476625}
+  - {fileID: 1272266925686502542}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6101041359582367892}
   StringsBanks:
   - {fileID: 7164198517794379976}
-  cacheTime: 638147832165157295
+  cacheTime: 638147978901767827
   cacheVersion: 131601
+--- !u!114 &1272266925686502542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/item_heavy_drop
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/item_heavy_drop
+  Guid:
+    Data1: 1300343025
+    Data2: 1108379949
+    Data3: 1365140880
+    Data4: 1613101472
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 813
 --- !u!114 &1953861760314812309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +414,60 @@ MonoBehaviour:
   MinDistance: 2.2
   MaxDistance: 30
   Length: 46000
+--- !u!114 &3126649581824476625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/item_light_throw
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/item_light_throw
+  Guid:
+    Data1: -1260747671
+    Data2: 1122328029
+    Data3: -596669563
+    Data4: -575453822
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 734
+--- !u!114 &3397036439785025844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/item_shoot
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/item_shoot
+  Guid:
+    Data1: 2128510543
+    Data2: 1197068322
+    Data3: 40155570
+    Data4: 108181605
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1965
 --- !u!114 &4341253768396474604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -370,10 +510,10 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638147832165157295
+  lastModified: 638147978901767827
   FileSizes:
   - Name: Desktop
-    Value: 1432
+    Value: 1664
   Exists: 1
 --- !u!114 &7187161892365890258
 MonoBehaviour:

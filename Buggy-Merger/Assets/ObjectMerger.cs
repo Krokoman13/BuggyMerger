@@ -12,6 +12,13 @@ public class ObjectMerger : MonoBehaviour
         MObject outP = Instantiate(two);
         two.enabled = true;
 
+        if (one.modelPrio > outP.modelPrio)
+        {
+            Destroy(outP.model.gameObject);
+            outP.model = Instantiate(one.model, outP.transform);
+            outP.model.localPosition = one.transform.localPosition;
+        }
+
         if (two.activation.type == OnActivationType.Fire)
         {
             outP.activation.Load(one);

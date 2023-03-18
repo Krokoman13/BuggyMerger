@@ -10,10 +10,11 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(MObject))]
 public class MObjectActivation : MonoBehaviour
 {
-    private MObject mObject;
+    protected MObject mObject;
 
     public enum OnActivationType {Drop = 0, Place = 1, Throw = 2, Fire = 3}
     public OnActivationType type = OnActivationType.Drop;
+    public bool mustLoad = false;
 
     public Rigidbody ammo;
     public float shootSpeed;
@@ -34,7 +35,7 @@ public class MObjectActivation : MonoBehaviour
         mObject = pMObject;
     }
 
-    public void Activate()
+    public virtual void Activate()
     {
         switch (type)
         {
@@ -108,6 +109,11 @@ public class MObjectActivation : MonoBehaviour
         {
             point = ray.origin + (ray.direction * pRange) + (Vector3.down * pRange);
         }
+
+        Vector3 rotation = pMObject.transform.eulerAngles;
+        rotation.x = 0f;
+        rotation.z = 0f;
+        pMObject.transform.rotation = Quaternion.Euler(rotation);
 
         pMObject.transform.position = point;
         Drop(pMObject);

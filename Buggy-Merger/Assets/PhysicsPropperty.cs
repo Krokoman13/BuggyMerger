@@ -6,27 +6,29 @@ public class PhysicsPropperty : MObjectPropperty
 {
     public PhysicMaterial physicMaterial;
 
-    public PhysicsPropperty OverrideBy (PhysicsPropperty pToClone)
+    public PhysicsPropperty OverrideWith (PhysicsPropperty pToClone)
     {
-        priority = pToClone.priority;
-        exclusive = pToClone.exclusive;
+
         physicMaterial = pToClone.physicMaterial;
         return this;
     }
 
     private void Awake()
     {
-        //exclusive = true;
+        exclusive = true;
         //if (physicMaterial == null) Destroy(this);
     }
 
     public override void Apply()
     {
-        Collider[] cols = GetComponents<Collider>();
-
-        foreach (Collider col in cols)
+        foreach (Transform child in transform)
         {
-            col.material = physicMaterial;
+            Collider[] cols = child.GetComponents<Collider>();
+
+            foreach (Collider col in cols)
+            {
+                col.material = physicMaterial;
+            }
         }
     }
 

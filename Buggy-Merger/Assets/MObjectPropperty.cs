@@ -12,10 +12,13 @@ public abstract class MObjectPropperty : MonoBehaviour
     {
         T cloned = pTarget.AddComponent(pToClone.GetType()) as T;
 
+        cloned.priority = pToClone.priority;
+        cloned.exclusive = pToClone.exclusive;
+
         switch (cloned)
         {
             case PhysicsPropperty pP:
-                return pP.OverrideBy(pToClone as PhysicsPropperty); ;
+                return pP.OverrideWith(pToClone as PhysicsPropperty);
         }
 
         return null;
