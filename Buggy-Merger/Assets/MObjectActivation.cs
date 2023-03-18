@@ -12,10 +12,9 @@ public class MObjectActivation : MonoBehaviour
 {
     private MObject mObject;
 
-    public enum OnActivationType {Place = 0, Throw = 1, Fire = 2}
-    public OnActivationType type = OnActivationType.Place;
+    public enum OnActivationType {Drop = 0, Place = 1, Throw = 2, Fire = 3}
+    public OnActivationType type = OnActivationType.Drop;
 
-    public Rigidbody defaultAmmoPrefab;
     public Rigidbody ammo;
     public float shootSpeed;
     
@@ -46,19 +45,19 @@ public class MObjectActivation : MonoBehaviour
                 activateThrow(mObject, (mObject.transform.forward + throwAngle).normalized * throwForce);
                 break;
             case OnActivationType.Fire:
-                activateFire();
+                activateFire(shootSpeed);
                 break;
         }
     }
 
-    private void activateFire()
+    private void activateFire(float force)
     {
-        Rigidbody toShootPrefab = ammo != null ? ammo : defaultAmmoPrefab;
-        if (toShootPrefab == null) return;
+        if (ammo == null) return;
 
-        Rigidbody toShoot = Instantiate(toShootPrefab);
+        Rigidbody toShoot = Instantiate(ammo);
+        toShoot.gameObject.SetActive(true);
         toShoot.transform.position = mObject.transform.position;
-
+        toShoot.velocity = (toShoot.transform.forward * force);
     }
 
     public static void activateThrow(MObject pMObject, Vector3 pForce)
@@ -110,12 +109,14 @@ public class MObjectActivation : MonoBehaviour
         Drop(pMObject);
     }
 
-    public MObject Load(MObject mObject)
+    public void Load(MObject mObject)
     {
+        Drop(mObject);
         MObject oldAmmo = ammo.GetComponent<MObject>();
-        ammo = mObject.GetComponent<Rigidbody>();
-
-        return oldAmmo;
+        ammo = Instantiate(mObject, transform).GetComponent<Rigidbody>();
+        ammo.transform.localPosition = Vector3.zero;
+        ammo.gameObject.SetActive(false);
+        Destroy(oldAmmo.gameObject);
     }
 
     private void OnDrawGizmosSelected()

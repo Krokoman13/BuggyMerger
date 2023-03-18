@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
 
+[RequireComponent(typeof(MObjectActivation))]
 public class MObject : MonoBehaviour
 {
     public Outline outline;

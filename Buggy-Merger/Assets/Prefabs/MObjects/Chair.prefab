@@ -97,6 +97,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outline: {fileID: 0}
+  activation: {fileID: 0}
+  properties: []
 --- !u!114 &-8671938001221590515
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109,8 +111,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca10bbc9517d5f54a9631a7b1234d438, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 0
-  defaultAmmoPrefab: {fileID: 0}
+  type: 1
   ammo: {fileID: 0}
   shootSpeed: 10
   throwAngle: {x: 0, y: 1, z: 0}
