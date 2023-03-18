@@ -1,5 +1,32 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8571025968032026122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience_sfx/ambience_room_sfx
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience_sfx/ambience_room_sfx
+  Guid:
+    Data1: -1781797143
+    Data2: 1209593364
+    Data3: -522715220
+    Data4: -1545952901
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 35500
 --- !u!114 &-6101041359582367892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15,11 +42,65 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638147356158892615
+  lastModified: 638147625549104509
   FileSizes:
   - Name: Desktop
-    Value: 2261248
+    Value: 7370176
   Exists: 1
+--- !u!114 &-4602894520104035701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience_sfx/ambience_rooftop
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience_sfx/ambience_rooftop
+  Guid:
+    Data1: -665105542
+    Data2: 1201597447
+    Data3: -345218138
+    Data4: -1371752574
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 172000
+--- !u!114 &-2821066312686626893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambience_AC_FUCKINGWORK
+  m_EditorClassIdentifier: 
+  Path: event:/Ambience_AC_FUCKINGWORK
+  Guid:
+    Data1: -66868009
+    Data2: 1234227635
+    Data3: -135806558
+    Data4: -1602579458
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5625
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37,14 +118,16 @@ MonoBehaviour:
   - {fileID: -6101041359582367892}
   EditorEvents:
   - {fileID: 1061468452643231885}
-  - {fileID: 5573017281551477868}
-  - {fileID: 2721930074113778074}
+  - {fileID: -4602894520104035701}
+  - {fileID: -8571025968032026122}
+  - {fileID: 2490516294519227246}
+  - {fileID: -2821066312686626893}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6101041359582367892}
   StringsBanks:
   - {fileID: 7164198517794379976}
-  cacheTime: 638147356158900074
+  cacheTime: 638147625549118206
   cacheVersion: 131601
 --- !u!114 &1061468452643231885
 MonoBehaviour:
@@ -72,8 +155,8 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 104023
---- !u!114 &2721930074113778074
+  Length: 196000
+--- !u!114 &2490516294519227246
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -83,49 +166,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience_sfx/Ambience_room_sfx
+  m_Name: event:/Ambience_sfx/ambience_ac_local_sfx
   m_EditorClassIdentifier: 
-  Path: event:/Ambience_sfx/Ambience_room_sfx
+  Path: event:/Ambience_sfx/ambience_ac_local_sfx
   Guid:
-    Data1: -1781797143
-    Data2: 1209593364
-    Data3: -522715220
-    Data4: -1545952901
-  Banks:
-  - {fileID: -6101041359582367892}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 35500
---- !u!114 &5573017281551477868
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambience_sfx/Ambience_AC_sfx
-  m_EditorClassIdentifier: 
-  Path: event:/Ambience_sfx/Ambience_AC_sfx
-  Guid:
-    Data1: 602313060
-    Data2: 1139584755
-    Data3: 776264353
-    Data4: 582972866
+    Data1: 1779554543
+    Data2: 1083075160
+    Data3: 1668769720
+    Data4: 1459475811
   Banks:
   - {fileID: -6101041359582367892}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
   Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
+  MinDistance: 2.2
+  MaxDistance: 30
   Length: 46000
 --- !u!114 &7164198517794379976
 MonoBehaviour:
@@ -142,8 +198,8 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638147356158900074
+  lastModified: 638147625549118206
   FileSizes:
   - Name: Desktop
-    Value: 876
+    Value: 986
   Exists: 1
