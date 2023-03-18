@@ -980,6 +980,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1624373664788974744, guid: 69acee5b01b1ead498afbd952347a962, type: 3}
+      propertyPath: shootSpeed
+      value: 40
+      objectReference: {fileID: 0}
     - target: {fileID: 6990749657403400004, guid: 69acee5b01b1ead498afbd952347a962, type: 3}
       propertyPath: m_Name
       value: Cannon
