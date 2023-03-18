@@ -21,6 +21,8 @@ public class ObjectSelector : PlayerComponent
     [SerializeField] UnityEvent onSeeObject = null;
     [SerializeField] UnityEvent onLostObject = null;
 
+    [SerializeField] UnityEvent onMerge = null;
+
     // Update is called once per frame
     void Update()
     {
@@ -48,6 +50,7 @@ public class ObjectSelector : PlayerComponent
 
         if (Input.GetMouseButtonDown(2) && inLeft != null && inRight != null)
         {
+            onMerge?.Invoke();
             MObject newObject = ObjectMerger.Merge(inLeft, inRight);
             Destroy(inLeft.gameObject);
             Destroy(inRight.gameObject);
