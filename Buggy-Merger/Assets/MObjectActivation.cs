@@ -38,6 +38,9 @@ public class MObjectActivation : MonoBehaviour
     {
         switch (type)
         {
+            case OnActivationType.Drop:
+                Drop(mObject);
+                break;
             case OnActivationType.Place:
                 activatePlace(mObject, groundDetectMask, 3f);
                 break;
@@ -56,7 +59,8 @@ public class MObjectActivation : MonoBehaviour
 
         Rigidbody toShoot = Instantiate(ammo);
         toShoot.gameObject.SetActive(true);
-        toShoot.transform.position = mObject.transform.position;
+        toShoot.transform.position = mObject.transform.position + (mObject.transform.forward / 2f);
+        toShoot.transform.rotation = mObject.transform.rotation;
         toShoot.velocity = (toShoot.transform.forward * force);
     }
 
