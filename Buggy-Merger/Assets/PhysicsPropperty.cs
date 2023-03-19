@@ -16,17 +16,20 @@ public class PhysicsPropperty : MObjectPropperty
 
     private void Awake()
     {
-        //exclusive = true;
+        exclusive = true;
         //if (physicMaterial == null) Destroy(this);
     }
 
     public override void Apply()
     {
-        Collider[] cols = GetComponents<Collider>();
-
-        foreach (Collider col in cols)
+        foreach (Transform child in transform)
         {
-            col.material = physicMaterial;
+            Collider[] cols = child.GetComponents<Collider>();
+
+            foreach (Collider col in cols)
+            {
+                col.material = physicMaterial;
+            }
         }
     }
 

@@ -33,7 +33,7 @@ public class ColliderHandeler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (tags.Contains(other.gameObject.tag))
+        if (tags.Contains(other.gameObject.tag) || tags.Count < 1)
         {
             onCollision.Invoke();
             if (destroyOnCollision) Destroy(gameObject);
