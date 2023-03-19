@@ -8,6 +8,8 @@ public class SaveChild : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (transform.parent != null) return;
+
         foreach (Transform child in children)
         {
             child.SetParent(null);
