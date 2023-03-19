@@ -1193,6 +1193,9 @@ MonoBehaviour:
   frequency: 0.5
   tags:
   - MObject
+  mask:
+    serializedVersion: 2
+    m_Bits: 1
   handLeft: {fileID: 153902623}
   handRight: {fileID: 1124282759}
   onSeeObject:
