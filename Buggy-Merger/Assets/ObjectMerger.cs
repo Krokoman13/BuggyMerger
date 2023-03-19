@@ -17,7 +17,7 @@ public class ObjectMerger : MonoBehaviour
         if (one.modelPrio > outP.modelPrio)
         {
             Destroy(outP.model.gameObject);
-            outP.model = Instantiate(one.model, outP.transform);
+            //outP.model = Instantiate(one.model, outP.transform);
             outP.model.localPosition = one.transform.localPosition;
         }
 
@@ -29,7 +29,7 @@ public class ObjectMerger : MonoBehaviour
         {
             if (one.activation.mustLoad) outP.activation.mustLoad = true;
 
-            if (one.activation.type != OnActivationType.Fire && two.activation.type < one.activation.type)
+            if (two.activation.type < one.activation.type)
             {
                 MObjectActivation newActivation = outP.activation;
                 MObjectActivation oneActivation = one.activation;
@@ -40,6 +40,8 @@ public class ObjectMerger : MonoBehaviour
                 newActivation.shootSpeed = oneActivation.shootSpeed;
                 newActivation.throwAngle = oneActivation.throwAngle;
                 newActivation.throwForce = oneActivation.throwForce;
+
+                if (oneActivation.type == OnActivationType.Fire || oneActivation.mustLoad) newActivation.Load(two);
             }
 
             foreach (MObjectPropperty propperty in one.properties)
