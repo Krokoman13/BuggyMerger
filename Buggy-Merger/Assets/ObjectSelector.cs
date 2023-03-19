@@ -137,6 +137,8 @@ public class ObjectSelector : PlayerComponent
     {
         inLeft = mObject;
 
+        mObject.onPickup?.Invoke();
+
         if (mObject == null) return;
         mObject.transform.SetParent(handLeft);
         lockObject(mObject);
@@ -145,6 +147,8 @@ public class ObjectSelector : PlayerComponent
     private void equipRightHand(MObject mObject)
     {
         inRight = mObject;
+
+        mObject.onPickup?.Invoke();
 
         if (mObject == null) return;
         mObject.transform.SetParent(handRight);

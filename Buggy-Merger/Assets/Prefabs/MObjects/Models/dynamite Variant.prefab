@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 7619315401a608c448cfdec11e8e2825, type: 2}
     - target: {fileID: 919132149155446097, guid: 2af270bc759df5147b7699d0dafa1c2c, type: 3}
       propertyPath: m_Name
-      value: dynamite Variant 1
+      value: dynamite Variant
       objectReference: {fileID: 0}
     - target: {fileID: 5555640282568204375, guid: 2af270bc759df5147b7699d0dafa1c2c, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -88,3 +88,18 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -603527795243343019, guid: 2af270bc759df5147b7699d0dafa1c2c, type: 3}
+--- !u!114 &4459661013184187090
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5891638677651119319}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f576c2956175e428013810987f82e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toActivate:
+    m_PersistentCalls:
+      m_Calls: []

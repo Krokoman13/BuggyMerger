@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.SceneManagement;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MObject : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class MObject : MonoBehaviour
             return _model;
         }
     }
+    [HideInInspector] public UnityEvent onPickup = null;
 
     public int modelPrio;
 
@@ -44,6 +46,8 @@ public class MObject : MonoBehaviour
         {
             Add(propperty);
         }
+
+        onPickup = model.GetComponent<EventBehaviour>()?.toActivate;
     }
 
     // Start is called before the first frame update
