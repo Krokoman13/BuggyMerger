@@ -11,9 +11,10 @@ public class ObjectSelector : PlayerComponent
     public float range = 1;
     public float frequency = 1;
     [SerializeField] List<string> tags;
+    [SerializeField] LayerMask mask;
 
-    MObject inLeft;
-    MObject inRight;
+    [SerializeField] MObject inLeft;
+    [SerializeField] MObject inRight;
 
     [SerializeField] Transform handLeft;
     [SerializeField] Transform handRight;
@@ -28,14 +29,14 @@ public class ObjectSelector : PlayerComponent
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (current != null)
-            {
-                equipLeftHand(current);
-            }
-            else if (inLeft != null)
+            if (inLeft != null)
             {
                 inLeft.Activate();
                 if (inLeft.transform.parent != handLeft) inLeft = null;
+            }
+            else if (current != null)
+            {
+                equipLeftHand(current);
             }
         }
 
@@ -46,12 +47,35 @@ public class ObjectSelector : PlayerComponent
                 inRight.Activate();
                 if (inRight.transform.parent != handRight) inRight = null;
             }
+            else if (current != null)
+            {
+                equipRightHand(current);
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            MObjectActivation.Drop(inLeft);
+            MObjectActivation.Drop(inRight);
+
+            inLeft = inRight = null;
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            MObject oldLeft = inLeft;
+            MObject oldRight = inRight;
+
+            equipLeftHand(oldRight);
+            equipRightHand(oldLeft);
         }
 
         if (Input.GetMouseButtonDown(2) && inLeft != null && inRight != null)
         {
             onMerge?.Invoke();
             MObject newObject = ObjectMerger.Merge(inLeft, inRight);
+            if (newObject == null) return;
+
             Destroy(inLeft.gameObject);
             Destroy(inRight.gameObject);
             equipLeftHand(newObject);
@@ -67,7 +91,7 @@ public class ObjectSelector : PlayerComponent
 
         Ray ray = cam.ScreenPointToRay(new Vector3(Screen.width/2f, Screen.height / 2f, 0f));
 
-        if (Physics.Raycast(ray, out hit, range))
+        if (Physics.Raycast(ray, out hit, range, mask))
         {
             Transform objectHit = hit.transform;
 
@@ -111,30 +135,22 @@ public class ObjectSelector : PlayerComponent
 
     private void equipLeftHand(MObject mObject)
     {
-        if (mObject == null) return;
-
-        if (inLeft != null)
-        {
-            equipRightHand(inLeft);
-        }
-
         inLeft = mObject;
 
+        mObject.onPickup?.Invoke();
+
+        if (mObject == null) return;
         mObject.transform.SetParent(handLeft);
         lockObject(mObject);
     }
 
     private void equipRightHand(MObject mObject)
     {
-        if (mObject == null) return;
-
-        if (inRight != null)
-        {
-            MObjectActivation.Drop(inRight);
-        }
-
         inRight = mObject;
 
+        mObject.onPickup?.Invoke();
+
+        if (mObject == null) return;
         mObject.transform.SetParent(handRight);
         lockObject(mObject);
     }
