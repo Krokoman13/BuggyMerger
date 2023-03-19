@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Personal Folders/Matthijs/Pregame Scene.unity
+    guid: 4bdcb88e2ee92a84489f47b9d2c3f290
+  - enabled: 1
+    path: Assets/Personal Folders/Matthijs/Matthijs Scene.unity
+    guid: e8a4e0998d8d83c44b048b767199f2a2
   m_configObjects: {}
