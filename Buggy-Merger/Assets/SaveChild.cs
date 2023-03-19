@@ -8,6 +8,10 @@ public class SaveChild : MonoBehaviour
 
     private void OnDestroy()
     {
-        foreach(Transform child in children) child.SetParent(null);
+        foreach (Transform child in children)
+        {
+            child.SetParent(null);
+            child.gameObject.SetActive(true);
+        }
     }
 }
