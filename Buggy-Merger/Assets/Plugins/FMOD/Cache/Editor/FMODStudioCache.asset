@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 35500
+--- !u!114 &-7044930065832359144
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/slime_pickup
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/slime_pickup
+  Guid:
+    Data1: 708922010
+    Data2: 1247050976
+    Data3: -1352846690
+    Data4: -870870214
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 472
 --- !u!114 &-6101041359582367892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -42,10 +69,10 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638147978901744787
+  lastModified: 638148321991536862
   FileSizes:
   - Name: Desktop
-    Value: 8798496
+    Value: 10800160
   Exists: 1
 --- !u!114 &-5173479932902563953
 MonoBehaviour:
@@ -73,7 +100,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 196000
+  Length: 192000
 --- !u!114 &-4943944539884311346
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,12 +122,39 @@ MonoBehaviour:
   Banks:
   - {fileID: -6101041359582367892}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
   Length: 2344
+--- !u!114 &-4918179375333643879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/error_popup
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/error_popup
+  Guid:
+    Data1: -1956354504
+    Data2: 1279157396
+    Data3: 2115563920
+    Data4: 718551929
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 538
 --- !u!114 &-4618306148475186301
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -181,7 +235,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 65187
+  Length: 74296
 --- !u!114 &-4224534559343514053
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -263,6 +317,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1046
+--- !u!114 &-1457681720010412207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music_lvl02
+  m_EditorClassIdentifier: 
+  Path: event:/Music_lvl02
+  Guid:
+    Data1: -529568782
+    Data2: 1203267254
+    Data3: -1883431038
+    Data4: 1251719390
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 116000
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -298,12 +379,17 @@ MonoBehaviour:
   - {fileID: 3397036439785025844}
   - {fileID: 3126649581824476625}
   - {fileID: 1272266925686502542}
+  - {fileID: 9049060978784988773}
+  - {fileID: -1457681720010412207}
+  - {fileID: -7044930065832359144}
+  - {fileID: -4918179375333643879}
+  - {fileID: 2968563250372048591}
   EditorParameters: []
   MasterBanks:
   - {fileID: -6101041359582367892}
   StringsBanks:
   - {fileID: 7164198517794379976}
-  cacheTime: 638147978901767827
+  cacheTime: 638148321991559385
   cacheVersion: 131601
 --- !u!114 &1272266925686502542
 MonoBehaviour:
@@ -414,6 +500,33 @@ MonoBehaviour:
   MinDistance: 2.2
   MaxDistance: 30
   Length: 46000
+--- !u!114 &2968563250372048591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Item_sfx/pressure_plate_activate
+  m_EditorClassIdentifier: 
+  Path: event:/Item_sfx/pressure_plate_activate
+  Guid:
+    Data1: -112259555
+    Data2: 1335463084
+    Data3: 1061913012
+    Data4: 116574203
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1770
 --- !u!114 &3126649581824476625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -510,10 +623,10 @@ MonoBehaviour:
   Path: ../../Documents/HOME []/GAMEJAMS/XP_GAMEJAM/Gamejam_Bugs/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638147978901767827
+  lastModified: 638148321991559385
   FileSizes:
   - Name: Desktop
-    Value: 1664
+    Value: 1878
   Exists: 1
 --- !u!114 &7187161892365890258
 MonoBehaviour:
@@ -620,3 +733,30 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1041
+--- !u!114 &9049060978784988773
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music_lvl03
+  m_EditorClassIdentifier: 
+  Path: event:/Music_lvl03
+  Guid:
+    Data1: -313390365
+    Data2: 1325925209
+    Data3: 964475533
+    Data4: 551994272
+  Banks:
+  - {fileID: -6101041359582367892}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 38636
