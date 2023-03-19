@@ -9,12 +9,12 @@ public class Sticky : MObjectMaterialPropperty
     // Start is called before the first frame update
     public override void Awake()
     {
+        base.Awake();
         rb = GetComponent<Rigidbody>();
     }
 
     void OnCollisionStay(Collision collisionInfo)
     {
-        Debug.Log("Stick");
-        rb.isKinematic = false;
+        rb.isKinematic = true;
     }
 }

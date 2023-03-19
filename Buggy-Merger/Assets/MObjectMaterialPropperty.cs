@@ -7,9 +7,10 @@ public abstract class MObjectMaterialPropperty : MObjectPropperty
 {
     public List<Material> materials = null;
 
-    [NonSerialized] public bool first = true;
+    public bool first = false;
     MObject mObject;
 
+    public int preferedColor = -1;
 
     public virtual void Awake()
     {
@@ -32,7 +33,7 @@ public abstract class MObjectMaterialPropperty : MObjectPropperty
     public override void Apply()
     {
         if (materials.Count < 1) return;
-        if (!first) RandomExtention.Shuffle(materials);
+        if (!first && preferedColor < 1) RandomExtention.Shuffle(materials);
 
         mObject = GetComponent<MObject>();
         int matCount = 0;
@@ -46,20 +47,23 @@ public abstract class MObjectMaterialPropperty : MObjectPropperty
 
             for (int i = 0; i < renderer.materials.Count(); i++)
             {
+                if (!first && preferedColor >= 0) matCount = preferedColor;
                 if (matCount >= materials.Count) matCount = 0;
                 array[i] = materials[matCount];
                 matCount++;
             }
-
-            first = false;
+            
             renderer.materials = array;
         }
+
+        first = false;
     }
 
     public MObjectMaterialPropperty overrideWith(MObjectMaterialPropperty toClone)
     {
-        first = toClone.first;
+        first = false;
         materials = toClone.materials;
+        preferedColor = toClone.preferedColor;
         return this;
     }
 }

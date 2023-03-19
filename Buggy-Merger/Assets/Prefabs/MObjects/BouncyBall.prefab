@@ -66,6 +66,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   activation: {fileID: 0}
   properties: []
+  onPickup:
+    m_PersistentCalls:
+      m_Calls: []
   modelPrio: 1
 --- !u!114 &3205689436389860697
 MonoBehaviour:
@@ -101,6 +104,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   priority: 1
+  materials: []
+  first: 1
+  preferedColor: -1
   physicMaterial: {fileID: 13400000, guid: e9920dee3b53a1544814726ccd60f4fa, type: 2}
 --- !u!1001 &2723784073215736468
 PrefabInstance:
