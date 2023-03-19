@@ -11,7 +11,7 @@ public abstract class MObjectMaterialPropperty : MObjectPropperty
     MObject mObject;
 
 
-    public void Awake()
+    public virtual void Awake()
     {
         if (materials == null || materials.Count > 1) return;
 
@@ -56,7 +56,7 @@ public abstract class MObjectMaterialPropperty : MObjectPropperty
         }
     }
 
-    protected MObjectMaterialPropperty overrideWith(MObjectMaterialPropperty toClone)
+    public MObjectMaterialPropperty overrideWith(MObjectMaterialPropperty toClone)
     {
         first = toClone.first;
         materials = toClone.materials;
