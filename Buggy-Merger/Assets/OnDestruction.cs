@@ -14,6 +14,7 @@ public class OnDestruction : MonoBehaviour
 
     private void OnDestroy()
     {
+        if (transform.parent == null)
         onDestruction?.Invoke();
     }
 }
