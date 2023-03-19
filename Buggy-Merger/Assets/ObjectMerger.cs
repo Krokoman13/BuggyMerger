@@ -8,6 +8,8 @@ public class ObjectMerger : MonoBehaviour
 {
     public static MObject Merge(MObject one, MObject two)
     {
+        if (one == null || two == null) return null;
+
         two.enabled = false;
         MObject outP = Instantiate(two);
         two.enabled = true;
@@ -15,25 +17,37 @@ public class ObjectMerger : MonoBehaviour
         if (one.modelPrio > outP.modelPrio)
         {
             Destroy(outP.model.gameObject);
-            outP.model = Instantiate(one.model, outP.transform);
+            //outP.model = Instantiate(one.model, outP.transform);
             outP.model.localPosition = one.transform.localPosition;
         }
 
-        if (two.activation.type == OnActivationType.Fire)
+        if (outP.activation.type == OnActivationType.Fire || outP.activation.mustLoad)
         {
             outP.activation.Load(one);
         }
-        else if (one.activation.type != OnActivationType.Fire && two.activation.type < one.activation.type)
+        else
         {
-            Destroy(outP.activation);
-            //outP.activation = ComponentUtils.CopyComponent(one.activation, outP.gameObject);
-            outP.activation = MObjectActivation.AddComponentClone(outP.gameObject, one.activation);
-            outP.activation.SetObject(outP);
-        }
+            if (one.activation.mustLoad) outP.activation.mustLoad = true;
 
-        foreach (MObjectPropperty propperty in one.properties)
-        {
-            outP.Add(MObjectPropperty.AddClonedProperty(outP.gameObject, propperty));
+            if (two.activation.type < one.activation.type)
+            {
+                MObjectActivation newActivation = outP.activation;
+                MObjectActivation oneActivation = one.activation;
+
+                newActivation.type = oneActivation.type;
+                newActivation.ammo = oneActivation.ammo;
+
+                newActivation.shootSpeed = oneActivation.shootSpeed;
+                newActivation.throwAngle = oneActivation.throwAngle;
+                newActivation.throwForce = oneActivation.throwForce;
+
+                if (oneActivation.type == OnActivationType.Fire || oneActivation.mustLoad) newActivation.Load(two);
+            }
+
+            foreach (MObjectPropperty propperty in one.properties)
+            {
+                outP.Add(MObjectPropperty.AddClonedProperty(outP.gameObject, propperty));
+            }
         }
 
         outP.enabled = true;

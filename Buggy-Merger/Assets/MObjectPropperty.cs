@@ -5,17 +5,20 @@ using UnityEngine;
 
 public abstract class MObjectPropperty : MonoBehaviour
 {
-    [NonSerialized] public bool exclusive = false;
+    [NonSerialized] public bool exclusive = true;
     public int priority = 1;
 
     public static MObjectPropperty AddClonedProperty<T>(GameObject pTarget, T pToClone) where T: MObjectPropperty
     {
         T cloned = pTarget.AddComponent(pToClone.GetType()) as T;
 
+        cloned.priority = pToClone.priority;
+        cloned.exclusive = pToClone.exclusive;
+
         switch (cloned)
         {
             case PhysicsPropperty pP:
-                return pP.OverrideBy(pToClone as PhysicsPropperty); ;
+                return pP.OverrideWith(pToClone as PhysicsPropperty);
         }
 
         return null;
