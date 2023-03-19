@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SocialPlatforms;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
@@ -24,6 +25,8 @@ public class MObjectActivation : MonoBehaviour
 
     LayerMask groundDetectMask = 1;
 
+    public UnityEvent onActivate = null;
+
     private void Awake()
     {
         mObject = GetComponent<MObject>();
@@ -35,8 +38,10 @@ public class MObjectActivation : MonoBehaviour
         mObject = pMObject;
     }
 
-    public virtual void Activate()
+    public void Activate()
     {
+        onActivate?.Invoke();
+
         switch (type)
         {
             case OnActivationType.Drop:
@@ -63,6 +68,10 @@ public class MObjectActivation : MonoBehaviour
         toShoot.transform.position = mObject.transform.position + (mObject.transform.forward / 2f);
         toShoot.transform.rotation = mObject.transform.rotation;
         toShoot.velocity = (toShoot.transform.forward * force);
+
+        MObject mToShoot;
+        toShoot.TryGetComponent<MObject>(out mToShoot);
+        if (mToShoot != null) mToShoot.activation.onActivate?.Invoke();
     }
 
     public static void activateThrow(MObject pMObject, Vector3 pForce)
@@ -76,6 +85,7 @@ public class MObjectActivation : MonoBehaviour
 
     public static void Drop(MObject mObject)
     {
+        if (mObject == null) return;
         Rigidbody rb = mObject.GetComponent<Rigidbody>();
 
         if (rb != null)
@@ -124,8 +134,7 @@ public class MObjectActivation : MonoBehaviour
         Drop(mObject);
         if (ammo != null)
         {
-            MObject oldAmmo = ammo.GetComponent<MObject>();
-            Destroy(oldAmmo.gameObject);
+            Destroy(ammo.gameObject);
         }
 
         ammo = Instantiate(mObject, transform).GetComponent<Rigidbody>();

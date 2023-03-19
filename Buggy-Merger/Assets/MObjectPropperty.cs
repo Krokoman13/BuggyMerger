@@ -5,7 +5,7 @@ using UnityEngine;
 
 public abstract class MObjectPropperty : MonoBehaviour
 {
-    [NonSerialized] public bool exclusive = false;
+    [NonSerialized] public bool exclusive = true;
     public int priority = 1;
 
     public static MObjectPropperty AddClonedProperty<T>(GameObject pTarget, T pToClone) where T: MObjectPropperty

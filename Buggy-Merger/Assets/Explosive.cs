@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Explosive : MObjectPropperty
+public class Explosive : MonoBehaviour
 {
     Rigidbody rb = null;
-    [SerializeField] bool exploding = false;
     [SerializeField] bool primed = false;
 
     public float power = 5f;
@@ -16,55 +15,44 @@ public class Explosive : MObjectPropperty
 
     MObjectActivation activation = null;
 
-    public override void Apply()
+    public void Awake()
     {
         activation = GetComponent<MObjectActivation>();
         activation.mustLoad = true;
+        activation.onActivate.AddListener(() => StartCoroutine(startExploding()));
 
         rb = GetComponent<Rigidbody>();
     }
 
-    protected override void Update()
-    {
-        if (exploding) return;
-
-        if (!primed)
-        {
-            if (rb.isKinematic) primed = true;
-            return;
-        }
-
-        if (primed && rb.isKinematic) return;
-
-        StartCoroutine(startExploding());
-    }
-
     IEnumerator startExploding()
     {
-        exploding = true;
+        primed = true;
         yield return new WaitForSeconds(durationSeconds);
         Destroy(gameObject);
     }
 
     private void explode()
     {
-        if (activation.ammo == null) return;
+        if (!primed || activation.ammo == null) return;
 
         for (int i = 0; i < amount; i++)
         {
             Rigidbody projectile = Instantiate(activation.ammo);
             projectile.gameObject.SetActive(true);
             Vector3 direction = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-            projectile.position = transform.position + direction;
+            projectile.position = transform.position;
             direction = direction.normalized * power;
             projectile.velocity = direction;
             projectile.angularVelocity = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+
+            MObject mToShoot;
+            projectile.TryGetComponent<MObject>(out mToShoot);
+            if (mToShoot != null) mToShoot.activation.onActivate?.Invoke();
         }
     }
 
-    public override void OnDestroy()
+    public void OnDestroy()
     {
-        if (rb.isKinematic) return;
         explode();
     }
 }

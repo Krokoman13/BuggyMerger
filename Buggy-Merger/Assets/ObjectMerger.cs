@@ -8,6 +8,8 @@ public class ObjectMerger : MonoBehaviour
 {
     public static MObject Merge(MObject one, MObject two)
     {
+        if (one == null || two == null) return null;
+
         two.enabled = false;
         MObject outP = Instantiate(two);
         two.enabled = true;
