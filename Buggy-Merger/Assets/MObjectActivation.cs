@@ -122,11 +122,16 @@ public class MObjectActivation : MonoBehaviour
     public void Load(MObject mObject)
     {
         Drop(mObject);
-        MObject oldAmmo = ammo.GetComponent<MObject>();
+        if (ammo != null)
+        {
+            MObject oldAmmo = ammo.GetComponent<MObject>();
+            Destroy(oldAmmo.gameObject);
+        }
+
         ammo = Instantiate(mObject, transform).GetComponent<Rigidbody>();
         ammo.transform.localPosition = Vector3.zero;
         ammo.gameObject.SetActive(false);
-        Destroy(oldAmmo.gameObject);
+
     }
 
     private void OnDrawGizmosSelected()
