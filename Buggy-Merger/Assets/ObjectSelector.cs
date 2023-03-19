@@ -13,14 +13,16 @@ public class ObjectSelector : PlayerComponent
     [SerializeField] List<string> tags;
     [SerializeField] LayerMask mask;
 
-    MObject inLeft;
-    MObject inRight;
+    [SerializeField] MObject inLeft;
+    [SerializeField] MObject inRight;
 
     [SerializeField] Transform handLeft;
     [SerializeField] Transform handRight;
 
     [SerializeField] UnityEvent onSeeObject = null;
     [SerializeField] UnityEvent onLostObject = null;
+
+    [SerializeField] UnityEvent onMerge = null;
 
     // Update is called once per frame
     void Update()
@@ -55,6 +57,8 @@ public class ObjectSelector : PlayerComponent
         {
             MObjectActivation.Drop(inLeft);
             MObjectActivation.Drop(inRight);
+
+            inLeft = inRight = null;
         }
 
         if (Input.GetKeyDown(KeyCode.F))
@@ -68,7 +72,10 @@ public class ObjectSelector : PlayerComponent
 
         if (Input.GetMouseButtonDown(2) && inLeft != null && inRight != null)
         {
+            onMerge?.Invoke();
             MObject newObject = ObjectMerger.Merge(inLeft, inRight);
+            if (newObject == null) return;
+
             Destroy(inLeft.gameObject);
             Destroy(inRight.gameObject);
             equipLeftHand(newObject);
@@ -128,20 +135,18 @@ public class ObjectSelector : PlayerComponent
 
     private void equipLeftHand(MObject mObject)
     {
-        if (mObject == null) return;
-
         inLeft = mObject;
 
+        if (mObject == null) return;
         mObject.transform.SetParent(handLeft);
         lockObject(mObject);
     }
 
     private void equipRightHand(MObject mObject)
     {
-        if (mObject == null) return;
-
         inRight = mObject;
 
+        if (mObject == null) return;
         mObject.transform.SetParent(handRight);
         lockObject(mObject);
     }

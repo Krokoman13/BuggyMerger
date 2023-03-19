@@ -6,10 +6,9 @@ public class PhysicsPropperty : MObjectPropperty
 {
     public PhysicMaterial physicMaterial;
 
-    public PhysicsPropperty OverrideBy (PhysicsPropperty pToClone)
+    public PhysicsPropperty OverrideWith (PhysicsPropperty pToClone)
     {
-        priority = pToClone.priority;
-        exclusive = pToClone.exclusive;
+
         physicMaterial = pToClone.physicMaterial;
         return this;
     }

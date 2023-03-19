@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MObject : MonoBehaviour
 {
-    public Outline outline;
+    //public Outline outline;
     public MObjectActivation activation;
 
     public List<MObjectPropperty> properties;
@@ -17,13 +17,13 @@ public class MObject : MonoBehaviour
 
     private void Awake()
     {
-        outline = GetComponent<Outline>();
+        //outline = GetComponent<Outline>();
 
-        if (outline == null) outline = gameObject.AddComponent<Outline>();
+        //if (outline == null) outline = gameObject.AddComponent<Outline>();
 
-        outline.OutlineColor = Color.green;
+        //outline.OutlineColor = Color.green;
         //gameObject.layer = 6;
-        outline.OutlineWidth = 10;
+        //outline.OutlineWidth = 10;
         gameObject.tag = nameof(MObject);
 
         List< MObjectPropperty > mObjectPropperties = new List<MObjectPropperty>(GetComponents<MObjectPropperty>());
@@ -40,7 +40,7 @@ public class MObject : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(UtilIenumerator.DelayAction(() => outline.enabled = false, 0.1f));
+        //StartCoroutine(UtilIenumerator.DelayAction(() => outline.enabled = false, 0.1f));
 
         foreach (MObjectPropperty propperty in properties)
         {
