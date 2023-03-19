@@ -19,6 +19,9 @@ public abstract class MObjectPropperty : MonoBehaviour
         {
             case PhysicsPropperty pP:
                 return pP.OverrideWith(pToClone as PhysicsPropperty);
+
+            case Sticky pP:
+                return pP.overrideWith(pToClone as Sticky) as Sticky;
         }
 
         return null;
