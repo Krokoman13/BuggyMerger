@@ -858,6 +858,7 @@ GameObject:
   - component: {fileID: 604433760}
   - component: {fileID: 604433759}
   - component: {fileID: 604433765}
+  - component: {fileID: 604433766}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1020,6 +1021,36 @@ MonoBehaviour:
       Data3: 306014372
       Data4: 1571921829
     Path: event:/Music_mainmenu
+  Event: 
+  PlayEvent: 1
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &604433766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 604433757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -665105542
+      Data2: 1201597447
+      Data3: -345218138
+      Data4: -1371752574
+    Path: event:/Ambience_sfx/ambience_rooftop
   Event: 
   PlayEvent: 1
   StopEvent: 2
