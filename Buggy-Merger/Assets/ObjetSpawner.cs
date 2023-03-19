@@ -7,6 +7,7 @@ public class ObjetSpawner : MonoBehaviour
     [SerializeField] Transform mObjectPrefab;
     [SerializeField] float secDuration = 5;
     [SerializeField] Transform mine;
+    [SerializeField] bool locked = false;
 
     bool spawning = false;
 
@@ -25,10 +26,11 @@ public class ObjetSpawner : MonoBehaviour
         mine.localPosition = Vector3.zero;
         mine.rotation = Quaternion.Euler(Vector3.zero);
 
+        if (!locked) return;
+
         Rigidbody rb;
         if (!mine.TryGetComponent<Rigidbody>(out rb)) return;
         rb.isKinematic = true;
-
     }
 
     // Update is called once per frame
