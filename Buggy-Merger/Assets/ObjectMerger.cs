@@ -7,23 +7,21 @@ using static MObjectActivation;
 public class ObjectMerger : MonoBehaviour
 {
     public static MObject Merge(MObject one, MObject two)
-    { 
+    {
         two.enabled = false;
         MObject outP = Instantiate(two);
         two.enabled = true;
 
-        if (two.activation != null)
+        if (two.activation.type == OnActivationType.Fire)
         {
-            if (two.activation == null || two.activation.type < one.activation.type)
-            {
-                if (two.activation != null) Destroy(outP.activation);
-                outP.activation = ComponentUtils.CopyComponent(one.activation, outP.gameObject);
-                outP.activation.SetObject(outP);
-            }
-            else if (two.activation.type == OnActivationType.Fire)
-            {
-                outP.activation.Load(one);
-            }
+            outP.activation.Load(one);
+        }
+        else if (one.activation.type != OnActivationType.Fire && two.activation.type < one.activation.type)
+        {
+            Destroy(outP.activation);
+            //outP.activation = ComponentUtils.CopyComponent(one.activation, outP.gameObject);
+            outP.activation = MObjectActivation.AddComponentClone(outP.gameObject, one.activation);
+            outP.activation.SetObject(outP);
         }
 
         foreach (MObjectPropperty propperty in one.properties)

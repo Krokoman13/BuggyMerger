@@ -12,8 +12,8 @@ public class MObjectActivation : MonoBehaviour
 {
     private MObject mObject;
 
-    public enum OnActivationType {Place = 0, Throw = 1, Fire = 2}
-    public OnActivationType type = OnActivationType.Place;
+    public enum OnActivationType {Drop = 0, Place = 1, Throw = 2, Fire = 3}
+    public OnActivationType type = OnActivationType.Drop;
 
     public Rigidbody ammo;
     public float shootSpeed;
@@ -38,6 +38,9 @@ public class MObjectActivation : MonoBehaviour
     {
         switch (type)
         {
+            case OnActivationType.Drop:
+                Drop(mObject);
+                break;
             case OnActivationType.Place:
                 activatePlace(mObject, groundDetectMask, 3f);
                 break;
@@ -45,18 +48,20 @@ public class MObjectActivation : MonoBehaviour
                 activateThrow(mObject, (mObject.transform.forward + throwAngle).normalized * throwForce);
                 break;
             case OnActivationType.Fire:
-                activateFire();
+                activateFire(shootSpeed);
                 break;
         }
     }
 
-    private void activateFire()
+    private void activateFire(float force)
     {
         if (ammo == null) return;
 
         Rigidbody toShoot = Instantiate(ammo);
-        toShoot.transform.position = mObject.transform.position;
-
+        toShoot.gameObject.SetActive(true);
+        toShoot.transform.position = mObject.transform.position + (mObject.transform.forward / 2f);
+        toShoot.transform.rotation = mObject.transform.rotation;
+        toShoot.velocity = (toShoot.transform.forward * force);
     }
 
     public static void activateThrow(MObject pMObject, Vector3 pForce)
@@ -108,12 +113,14 @@ public class MObjectActivation : MonoBehaviour
         Drop(pMObject);
     }
 
-    public MObject Load(MObject mObject)
+    public void Load(MObject mObject)
     {
+        Drop(mObject);
         MObject oldAmmo = ammo.GetComponent<MObject>();
-        ammo = mObject.GetComponent<Rigidbody>();
-
-        return oldAmmo;
+        ammo = Instantiate(mObject, transform).GetComponent<Rigidbody>();
+        ammo.transform.localPosition = Vector3.zero;
+        ammo.gameObject.SetActive(false);
+        Destroy(oldAmmo.gameObject);
     }
 
     private void OnDrawGizmosSelected()
@@ -122,5 +129,18 @@ public class MObjectActivation : MonoBehaviour
         Gizmos.color = Color.red;
 
         Gizmos.DrawLine(transform.position, transform.position + (transform.forward + throwAngle).normalized * throwForce);
+    }
+
+    internal static MObjectActivation AddComponentClone(GameObject target, MObjectActivation toClone)
+    {
+        MObjectActivation cloned = target.AddComponent<MObjectActivation>();
+        cloned.type = toClone.type;
+        cloned.ammo = toClone.ammo;
+
+        cloned.shootSpeed = toClone.shootSpeed;
+        cloned.throwAngle = toClone.throwAngle;
+        cloned.throwForce = toClone.throwForce;
+
+        return cloned;
     }
 }
