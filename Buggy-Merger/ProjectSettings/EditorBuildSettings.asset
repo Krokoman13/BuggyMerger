@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Personal Folders/Matthijs/Matthijs Scene.unity
     guid: e8a4e0998d8d83c44b048b767199f2a2
+  - enabled: 1
+    path: Assets/Personal Folders/Jim/Jim Scene.unity
+    guid: 1d9ad34d8cc19964c92756b4bad9e130
   m_configObjects: {}

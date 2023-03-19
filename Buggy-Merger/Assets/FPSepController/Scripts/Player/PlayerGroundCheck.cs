@@ -68,7 +68,7 @@ public class PlayerGroundCheck : PlayerComponent
         }
 
         //On hit: 
-        if (hit.collider != null && floorTags.Contains(hit.collider.tag))
+        if (hit.collider != null /*&& floorTags.Contains(hit.collider.tag)*/)
         {
             currentSlopeNormal = hit.normal;
 
